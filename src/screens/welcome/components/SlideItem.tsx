@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import styles from '../../../styles';
-import Slide1 from '../../../assets/slide1.svg';
-import Slide2 from '../../../assets/slide2.svg';
-import Slide3 from '../../../assets/slide3.svg';
+import styles from '@app/styles';
+import Slide1 from '@app/assets/slide1.svg';
+import Slide2 from '@app/assets/slide2.svg';
+import Slide3 from '@app/assets/slide3.svg';
 import {SlideData} from '..';
 
 type Props = {

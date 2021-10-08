@@ -59,12 +59,11 @@
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
     "paths": {
       "@app/routes": ["./src/routes"],
-      "@app/screens": ["./src/screens"],
-      "@app/components": ["./app/components"],
+      "@app/screens/*": ["./src/screens/*"],
       "@app/styles": ["./src/styles"],
       "@app/assets": ["./src/assets"],
-      "@app/redux": ["./src/redux"],
-      "@app/views": ["./src/views"],
+      "@app/redux": ["./src/redux/*"],
+      "@app/views": ["./src/views/*"],
     },  
   },
   "exclude": [

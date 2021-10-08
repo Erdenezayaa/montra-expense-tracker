@@ -2,7 +2,7 @@ import React from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Swiper from 'react-native-swiper';
-import styles from '../../styles';
+import styles from '@app/styles';
 import SlideItem from './components/SlideItem';
 
 export type SlideData = {
