@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {primary_text, secondary_text, soft_purple, violet} from './colors';
-import {screen_height, screen_width} from './dimens';
+import {screen_width} from './dimens';
 
 const styles = StyleSheet.create({
   container: {
