@@ -20,7 +20,7 @@ function SlideItem(props: Props) {
   const {item} = props;
   return (
     <View style={styles.slideContainer}>
-      <View style={{flex: 1, marginBottom: 20}}>{slides[item.icon]}</View>
+      <View style={styles.slideItemWrapper}>{slides[item.icon]}</View>
       <Text style={styles.title}>{item.title}</Text>
       <Text style={styles.subtitle}>{item.subtitle}</Text>
     </View>

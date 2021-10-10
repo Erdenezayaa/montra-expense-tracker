@@ -4,10 +4,12 @@ import {screen_height, screen_width} from './dimens';
 
 let slideWidth = screen_width;
 let slideHeight = screen_width;
-if (screen_height - 300 < slideWidth) {
-  slideHeight = screen_height - 300;
+if (screen_height - 350 < slideWidth) {
+  slideHeight = screen_height - 350;
   slideWidth = slideHeight;
 }
+
+console.log('screen height', screen_height);
 
 const styles = StyleSheet.create({
   container: {
@@ -129,6 +131,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     fontSize: 16,
     marginTop: 20,
+  },
+  slideItemWrapper: {
+    flex: 1,
   },
   scalingDotContainer: {
     height: 40,
