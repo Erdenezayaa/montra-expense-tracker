@@ -1,6 +1,13 @@
 import {StyleSheet} from 'react-native';
 import {primary_text, secondary_text, soft_purple, violet} from './colors';
-import {screen_width} from './dimens';
+import {screen_height, screen_width} from './dimens';
+
+let slideWidth = screen_width;
+let slideHeight = screen_width;
+if (screen_height - 300 < slideWidth) {
+  slideHeight = screen_height - 300;
+  slideWidth = slideHeight;
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -40,16 +47,17 @@ const styles = StyleSheet.create({
   },
   slideContainer: {
     flex: 1,
+    width: screen_width,
   },
   slideIcon: {
-    width: screen_width,
-    height: screen_width,
-    marginHorizontal: 35,
+    width: slideWidth,
+    height: slideHeight,
+    alignSelf: 'center',
   },
   activeDot: {
-    width: 16,
-    height: 16,
-    marginLeft: 5,
+    width: 15,
+    height: 15,
+    marginLeft: 10,
     borderRadius: 8,
     backgroundColor: violet,
   },
@@ -63,7 +71,7 @@ const styles = StyleSheet.create({
     backgroundColor: soft_purple,
   },
   paginationStyle: {
-    bottom: 0,
+    bottom: -20,
   },
   signupButton: {
     height: 60,
@@ -122,6 +130,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 20,
   },
+  scalingDotContainer: {
+    height: 40,
+  },
+  scalingDotPosition: {
+    bottom: 0,
+  },
 });
 
+export {slideHeight, slideWidth};
 export default styles;
