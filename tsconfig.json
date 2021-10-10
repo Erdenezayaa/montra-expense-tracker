@@ -57,13 +57,10 @@
     /* Experimental Options */
     // "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
+    "baseUrl": ".",
     "paths": {
-      "@app/routes": ["./src/routes"],
-      "@app/screens/*": ["./src/screens/*"],
-      "@app/styles": ["./src/styles"],
-      "@app/assets": ["./src/assets"],
-      "@app/redux": ["./src/redux/*"],
-      "@app/views": ["./src/views/*"],
+      "*": ["./src/*"],
+      "@app/*": ["./src/*"],
     },  
   },
   "exclude": [

@@ -93,6 +93,35 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     fontWeight: '600',
   },
+  headerContainer: {
+    height: 100,
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  headerTitle: {
+    fontSize: 18,
+    color: primary_text,
+    fontWeight: '600',
+    lineHeight: 22,
+  },
+  screenContainer: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  formContainer: {
+    marginTop: 30,
+    marginHorizontal: 15,
+    flex: 1,
+  },
+  textInput: {
+    height: 55,
+    borderRadius: 16,
+    borderColor: '#F1F1FA',
+    borderWidth: 1,
+    paddingHorizontal: 12,
+    fontSize: 16,
+    marginTop: 20,
+  },
 });
 
 export default styles;
