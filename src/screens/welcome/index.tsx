@@ -25,11 +25,7 @@ function WelcomeScreen(props: WelcomeProps) {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <View
-          onLayout={event =>
-            console.log('slider height', event.nativeEvent.layout.height)
-          }
-          style={styles.swiperContainer}>
+        <View style={styles.swiperContainer}>
           <FlatList
             data={data}
             horizontal

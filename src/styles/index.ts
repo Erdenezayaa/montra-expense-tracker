@@ -9,8 +9,6 @@ if (screen_height - 350 < slideWidth) {
   slideWidth = slideHeight;
 }
 
-console.log('screen height', screen_height);
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -107,6 +105,7 @@ const styles = StyleSheet.create({
     height: 100,
     flex: 1,
     backgroundColor: 'white',
+    borderBottomWidth: 1,
   },
   headerTitle: {
     fontSize: 18,
