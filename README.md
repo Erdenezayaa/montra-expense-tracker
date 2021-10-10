@@ -7,11 +7,11 @@ React Native UI Implementation of [Montra - Expense Tracker UI KIT](https://www.
 ### How to run
 
 #### Prerequisites
-Node 16.10.0 or later
-React Native: 0.66.0 or later
-XCode 13 or later
-Android Studio Arctic Fox 2020.3.1 or later
-JDK 11 or later
+- Node 16.10.0 or later
+- React Native: 0.66.0 or later
+- XCode 13 or later
+- Android Studio Arctic Fox 2020.3.1 or later
+- JDK 11 or later
 
 1. Install all dependencies with yarn
 ```bash
