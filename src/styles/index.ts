@@ -102,16 +102,36 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   headerContainer: {
-    height: 100,
-    flex: 1,
+    height: 60,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: 'white',
-    borderBottomWidth: 1,
   },
   headerTitle: {
     fontSize: 18,
     color: primary_text,
     fontWeight: '600',
     lineHeight: 22,
+  },
+  headerLeft: {
+    width: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  headerLeftTouchable: {
+    width: 60,
+    height: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  headerCenter: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  headerRight: {
+    width: 60,
   },
   screenContainer: {
     flex: 1,
@@ -140,6 +160,53 @@ const styles = StyleSheet.create({
   scalingDotPosition: {
     bottom: 0,
   },
+  orWith: {
+    fontSize: 14,
+    marginVertical: 10,
+    textAlign: 'center',
+    color: '#91919F',
+    fontWeight: 'bold',
+  },
+  neutralButton: {
+    borderWidth: 1,
+    borderColor: '#F1F1FA',
+    borderRadius: 16,
+    height: 56,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  neutralBtnTitle: {
+    fontSize: 18,
+    color: primary_text,
+    lineHeight: 22,
+    fontWeight: '600',
+    marginLeft: 10,
+    textAlignVertical: 'center',
+  },
+  horizontalRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  loginRow: {
+    marginTop: 15,
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  loginDesc: {
+    color: '#91919F',
+    fontSize: 16,
+    fontWeight: '500',
+    lineHeight: 19,
+  },
+  loginBtn: {
+    color: violet,
+    marginLeft: 5,
+    fontSize: 16,
+    fontWeight: '500',
+    lineHeight: 19,
+    textDecorationLine: 'underline',
+  },
+  safeAreaView: {flex: 1, backgroundColor: 'white'},
 });
 
 export {slideHeight, slideWidth};
