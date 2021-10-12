@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.4",
     "@react-navigation/native-stack": "^6.2.2",
+    "@reduxjs/toolkit": "^1.6.2",
     "react": "17.0.2",
     "react-native": "0.66.0",
     "react-native-animated-pagination-dots": "^0.1.72",
@@ -19,7 +20,8 @@
     "react-native-safe-area-view": "^1.1.1",
     "react-native-screens": "^3.8.0",
     "react-native-svg": "^12.1.1",
-    "react-native-vector-icons": "^8.1.0"
+    "react-native-vector-icons": "^8.1.0",
+    "react-redux": "^7.2.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

@@ -215,7 +215,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textAlignVertical: 'center',
   },
-  safeAreaView: {flex: 1, backgroundColor: 'white'},
+  safeAreaView: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  buttonHorizontal: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonLoader: {
+    marginLeft: 10,
+    color: 'white',
+  },
 });
 
 export {slideHeight, slideWidth};

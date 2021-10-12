@@ -9,13 +9,17 @@
  */
 
 import React from 'react';
+import {Provider} from 'react-redux';
+import {store} from '@app/redux/store';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import Routes from './routes';
 
 const App = () => {
   return (
     <SafeAreaProvider>
-      <Routes />
+      <Provider store={store}>
+        <Routes />
+      </Provider>
     </SafeAreaProvider>
   );
 };
