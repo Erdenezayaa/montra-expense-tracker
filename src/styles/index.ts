@@ -206,6 +206,15 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     textDecorationLine: 'underline',
   },
+  forgotPasswordBtn: {
+    fontSize: 18,
+    fontWeight: '600',
+    lineHeight: 22,
+    marginTop: 20,
+    color: violet,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+  },
   safeAreaView: {flex: 1, backgroundColor: 'white'},
 });
 

@@ -5,21 +5,24 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {ScalingDot} from 'react-native-animated-pagination-dots';
 import styles from '@app/styles';
 import SlideItem from './components/SlideItem';
-import {RootStackParamList} from '/routes/onboard';
+import {RootStackParamList} from '@app/routes/onboard';
 import {data} from './index.data';
 import {soft_purple, violet} from '@app/styles/colors';
 
-type WelcomeProps = {
+type Props = {
   navigation: NativeStackScreenProps<
     RootStackParamList,
     'Welcome'
   >['navigation'];
 };
 
-function WelcomeScreen(props: WelcomeProps) {
+function WelcomeScreen(props: Props) {
   const {navigation} = props;
   const onPressSignup = () => {
     navigation.navigate('Signup');
+  };
+  const onPressLogin = () => {
+    navigation.navigate('Login');
   };
   const scrollX = React.useRef(new Animated.Value(0)).current;
   return (
@@ -58,11 +61,7 @@ function WelcomeScreen(props: WelcomeProps) {
           <TouchableOpacity style={styles.signupButton} onPress={onPressSignup}>
             <Text style={styles.buttonTitle}>Sign Up</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.loginButton}
-            onPress={() => {
-              console.log('pressed');
-            }}>
+          <TouchableOpacity style={styles.loginButton} onPress={onPressLogin}>
             <Text style={styles.loginTitle}>Login</Text>
           </TouchableOpacity>
         </View>

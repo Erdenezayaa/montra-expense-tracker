@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, TextInput, TouchableOpacity, Text} from 'react-native';
 import styles from '@app/styles';
 import Header from '@app/views/Header';
 import GoogleIcon from '@app/assets/google_logo.svg';
@@ -8,28 +8,19 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@app/routes/onboard';
 
 type Props = {
-  navigation: NativeStackScreenProps<
-    RootStackParamList,
-    'Signup'
-  >['navigation'];
+  navigation: NativeStackScreenProps<RootStackParamList, 'Login'>['navigation'];
 };
 
-export default function SignupScreen(props: Props) {
+export default function LoginScreen(props: Props) {
   const {navigation} = props;
-  const onLoginPress = () => {
-    navigation.navigate('Login');
+  const onSignupPress = () => {
+    navigation.navigate('Signup');
   };
   return (
     <SafeAreaContainer>
       <View style={styles.screenContainer}>
-        <Header title="Sign Up" />
+        <Header title="Login" />
         <View style={styles.formContainer}>
-          <TextInput
-            style={styles.textInput}
-            placeholder="Name"
-            autoCapitalize="none"
-            placeholderTextColor="#91919F"
-          />
           <TextInput
             style={styles.textInput}
             placeholder="Email"
@@ -44,31 +35,26 @@ export default function SignupScreen(props: Props) {
             secureTextEntry={true}
             placeholderTextColor="#91919F"
           />
-          <TextInput
-            style={styles.textInput}
-            placeholder="Confirm Password"
-            autoCapitalize="none"
-            secureTextEntry={true}
-            placeholderTextColor="#91919F"
-          />
           <TouchableOpacity style={styles.signupButton}>
-            <Text style={styles.buttonTitle}>Sign Up</Text>
+            <Text style={styles.buttonTitle}>Login</Text>
           </TouchableOpacity>
           <Text style={styles.orWith}>Or with</Text>
           <TouchableOpacity style={styles.neutralButton}>
             <View style={styles.horizontalRow}>
               <GoogleIcon width={32} height={32} />
-              <Text style={styles.neutralBtnTitle}>Sign Up with Google</Text>
+              <Text style={styles.neutralBtnTitle}>Login with Google</Text>
             </View>
           </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={styles.forgotPasswordBtn}>Forgot Password?</Text>
+          </TouchableOpacity>
           <View style={styles.loginRow}>
-            <Text style={styles.loginDesc}>Already have an account?</Text>
-            <TouchableOpacity onPress={onLoginPress}>
-              <Text style={styles.loginBtn}>Login</Text>
+            <Text style={styles.loginDesc}>Don't have an account yet?</Text>
+            <TouchableOpacity onPress={onSignupPress}>
+              <Text style={styles.loginBtn}>Signup</Text>
             </TouchableOpacity>
           </View>
         </View>
-        <Text />
       </View>
     </SafeAreaContainer>
   );

@@ -5,6 +5,7 @@ import {
 } from '@react-navigation/native-stack';
 import WelcomeScreen from '@app/screens/welcome';
 import SignupScreen from '@app/screens/signup';
+import LoginScreen from '@app/screens/login';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,7 @@ const navigationOptions: NativeStackNavigationOptions = {
 export type RootStackParamList = {
   Welcome: undefined;
   Signup: undefined;
+  Login: undefined;
 };
 
 function OnboardStack() {
@@ -29,6 +31,11 @@ function OnboardStack() {
       <Stack.Screen
         name="Signup"
         component={SignupScreen}
+        options={navigationOptions}
+      />
+      <Stack.Screen
+        name="Login"
+        component={LoginScreen}
         options={navigationOptions}
       />
     </Stack.Navigator>
