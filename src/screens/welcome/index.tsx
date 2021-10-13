@@ -1,13 +1,13 @@
 import React from 'react';
 import {View, TouchableOpacity, Text, Animated, FlatList} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import {ScalingDot} from 'react-native-animated-pagination-dots';
 import styles from '@app/styles';
 import SlideItem from './components/SlideItem';
 import {RootStackParamList} from '@app/routes/onboard';
 import {data} from './index.data';
 import {soft_purple, violet} from '@app/styles/colors';
+import SafeAreaContainer from '@app/views/SafeAreaContainer';
 
 type Props = {
   navigation: NativeStackScreenProps<
@@ -26,7 +26,7 @@ function WelcomeScreen(props: Props) {
   };
   const scrollX = React.useRef(new Animated.Value(0)).current;
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaContainer>
       <View style={styles.container}>
         <View style={styles.swiperContainer}>
           <FlatList
@@ -66,7 +66,7 @@ function WelcomeScreen(props: Props) {
           </TouchableOpacity>
         </View>
       </View>
-    </SafeAreaView>
+    </SafeAreaContainer>
   );
 }
 

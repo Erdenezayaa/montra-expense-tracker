@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView} from 'react-native';
+import {Platform, SafeAreaView, StatusBar} from 'react-native';
 import styles from '@app/styles';
 
 type Props = {
@@ -8,6 +8,13 @@ type Props = {
 
 function SafeAreaContainer(props: Props) {
   const {children} = props;
-  return <SafeAreaView style={styles.safeArea}>{children}</SafeAreaView>;
+  return (
+    <SafeAreaView style={styles.safeArea}>
+      {Platform.OS === 'android' && (
+        <StatusBar backgroundColor="white" barStyle="dark-content" />
+      )}
+      {children}
+    </SafeAreaView>
+  );
 }
 export default SafeAreaContainer;

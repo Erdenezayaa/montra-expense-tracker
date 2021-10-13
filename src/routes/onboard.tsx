@@ -12,6 +12,7 @@ const Stack = createNativeStackNavigator();
 const navigationOptions: NativeStackNavigationOptions = {
   headerShown: false,
   statusBarStyle: 'dark',
+  animation: 'slide_from_right',
 };
 
 export type RootStackParamList = {

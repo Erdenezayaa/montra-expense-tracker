@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {primary_text, secondary_text, soft_purple, violet} from './colors';
 import {screen_height, screen_width} from './dimens';
+import * as fonts from './fonts';
 
 let slideWidth = screen_width;
 let slideHeight = screen_width;
@@ -23,6 +24,7 @@ const styles = StyleSheet.create({
   title: {
     color: primary_text,
     fontSize: 32,
+    fontFamily: fonts.regular,
     fontWeight: 'bold',
     textAlign: 'center',
     marginHorizontal: 35,
@@ -32,6 +34,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: secondary_text,
     lineHeight: 19,
+    fontFamily: fonts.regular,
     fontSize: 16,
     marginHorizontal: 35,
     textAlign: 'center',
@@ -92,12 +95,14 @@ const styles = StyleSheet.create({
   buttonTitle: {
     color: '#fcfcfc',
     fontSize: 18,
+    fontFamily: fonts.regular,
     lineHeight: 22,
     fontWeight: '600',
   },
   loginTitle: {
     color: '#7F3DFF',
     fontSize: 18,
+    fontFamily: fonts.regular,
     lineHeight: 22,
     fontWeight: '600',
   },
@@ -110,6 +115,7 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 18,
+    fontFamily: fonts.regular,
     color: primary_text,
     fontWeight: '600',
     lineHeight: 22,
@@ -145,6 +151,7 @@ const styles = StyleSheet.create({
   textInput: {
     height: 55,
     borderRadius: 16,
+    fontFamily: fonts.regular,
     borderColor: '#F1F1FA',
     borderWidth: 1,
     paddingHorizontal: 12,
@@ -162,6 +169,7 @@ const styles = StyleSheet.create({
   },
   orWith: {
     fontSize: 14,
+    fontFamily: fonts.regular,
     marginVertical: 10,
     textAlign: 'center',
     color: '#91919F',
@@ -177,6 +185,7 @@ const styles = StyleSheet.create({
   },
   neutralBtnTitle: {
     fontSize: 18,
+    fontFamily: fonts.regular,
     color: primary_text,
     lineHeight: 22,
     fontWeight: '600',
@@ -195,6 +204,7 @@ const styles = StyleSheet.create({
   loginDesc: {
     color: '#91919F',
     fontSize: 16,
+    fontFamily: fonts.regular,
     fontWeight: '500',
     lineHeight: 19,
   },
@@ -202,12 +212,14 @@ const styles = StyleSheet.create({
     color: violet,
     marginLeft: 5,
     fontSize: 16,
+    fontFamily: fonts.regular,
     fontWeight: '500',
     lineHeight: 19,
     textDecorationLine: 'underline',
   },
   forgotPasswordBtn: {
     fontSize: 18,
+    fontFamily: fonts.regular,
     fontWeight: '600',
     lineHeight: 22,
     marginTop: 20,
