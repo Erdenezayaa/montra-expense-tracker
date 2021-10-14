@@ -35,7 +35,7 @@ export default function VerificationScreen(props: Props) {
       <View style={styles.container}>
         <Header title="Verification" />
         <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'position' : null}
+          behavior={Platform.OS === 'ios' ? 'position' : undefined}
           keyboardVerticalOffset={extraPadding}
           style={styles.containerBottom}>
           <Text style={styles.verificationPrompt}>
