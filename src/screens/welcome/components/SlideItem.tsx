@@ -1,26 +1,31 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import styles, {slideHeight, slideWidth} from '@app/styles';
-import Slide1 from '@app/assets/slide1.svg';
-import Slide2 from '@app/assets/slide2.svg';
-import Slide3 from '@app/assets/slide3.svg';
+import LottieView from 'lottie-react-native';
+import styles from '@app/styles';
 import {SlideData} from '../index.data';
 
 type Props = {
   item: SlideData;
+  first: React.RefObject<LottieView>;
+  second: React.RefObject<LottieView>;
+  third: React.RefObject<LottieView>;
 };
 
-const slides = [
-  <Slide1 width={slideWidth} height={slideHeight} style={styles.slideIcon} />,
-  <Slide2 width={slideWidth} height={slideHeight} style={styles.slideIcon} />,
-  <Slide3 width={slideWidth} height={slideHeight} style={styles.slideIcon} />,
-];
+const slide1 = require('@app/assets/gain_control.json');
+const slide2 = require('@app/assets/know_money.json');
+const slide3 = require('@app/assets/planning_ahead.json');
 
 function SlideItem(props: Props) {
-  const {item} = props;
+  const {item, first, second, third} = props;
   return (
     <View style={styles.slideContainer}>
-      <View style={styles.slideItemWrapper}>{slides[item.icon]}</View>
+      <View style={styles.slideItemWrapper}>
+        {item.icon === 0 && <LottieView ref={first} source={slide1} autoPlay />}
+        {item.icon === 1 && (
+          <LottieView ref={second} source={slide2} autoPlay />
+        )}
+        {item.icon === 2 && <LottieView ref={third} source={slide3} autoPlay />}
+      </View>
       <Text style={styles.title}>{item.title}</Text>
       <Text style={styles.subtitle}>{item.subtitle}</Text>
     </View>

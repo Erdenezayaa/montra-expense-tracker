@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {View, TouchableOpacity, Text, Animated, FlatList} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {ScalingDot} from 'react-native-animated-pagination-dots';
+import LottieView from 'lottie-react-native';
 import styles from '@app/styles';
 import SlideItem from './components/SlideItem';
 import {RootStackParamList} from '@app/routes/onboard';
@@ -26,6 +27,10 @@ function WelcomeScreen(props: Props) {
     navigation.navigate('Login');
   };
   const scrollX = React.useRef(new Animated.Value(0)).current;
+  const firstAnim = useRef<LottieView>(null);
+  const secondAnim = useRef<LottieView>(null);
+  const thirdAnim = useRef<LottieView>(null);
+  const animations = [firstAnim, secondAnim, thirdAnim];
   return (
     <SafeAreaContainer>
       <View style={styles.container}>
@@ -36,13 +41,27 @@ function WelcomeScreen(props: Props) {
             decelerationRate={'normal'}
             scrollEventThrottle={16}
             pagingEnabled={true}
+            onScrollBeginDrag={() => {
+              animations.forEach(anim => anim.current?.pause());
+            }}
+            onMomentumScrollEnd={() => {
+              animations.forEach(anim => anim.current?.play());
+            }}
             onScroll={Animated.event(
               [{nativeEvent: {contentOffset: {x: scrollX}}}],
               {
                 useNativeDriver: false,
               },
             )}
-            renderItem={({item}) => <SlideItem key={item.icon} item={item} />}
+            renderItem={({item}) => (
+              <SlideItem
+                key={item.icon}
+                item={item}
+                first={firstAnim}
+                second={secondAnim}
+                third={thirdAnim}
+              />
+            )}
             showsHorizontalScrollIndicator={false}
           />
         </View>
