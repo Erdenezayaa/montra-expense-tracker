@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {
   dark_text,
   primary_text,
@@ -253,6 +253,7 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingTop: 5,
     paddingHorizontal: 15,
+    paddingBottom: Platform.OS === 'android' ? 30 : 10,
     justifyContent: 'flex-end',
   },
   verificationPrompt: {
@@ -264,7 +265,7 @@ const styles = StyleSheet.create({
     color: dark_text,
   },
   codeInput: {
-    height: 40,
+    height: Platform.OS === 'android' ? 60 : 40,
     marginVertical: 15,
     color: dark_text,
     fontSize: 32,
@@ -276,6 +277,7 @@ const styles = StyleSheet.create({
   verificationDesc: {
     fontFamily: fonts.regular,
     fontSize: 16,
+    color: dark_text,
     lineHeight: 20,
     fontWeight: '500',
   },

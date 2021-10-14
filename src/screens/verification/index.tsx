@@ -5,6 +5,7 @@ import {
   KeyboardAvoidingView,
   TextInput,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@app/routes/onboard';
@@ -25,6 +26,7 @@ export default function VerificationScreen(props: Props) {
   const {navigation} = props;
   const [extraPadding, setExtraPadding] = useState(0);
   const codeInputRef = useRef<TextInput>(null);
+  const mounted = useRef(false);
   const onVerifyClick = () => {
     navigation.navigate('Login');
   };
@@ -33,7 +35,7 @@ export default function VerificationScreen(props: Props) {
       <View style={styles.container}>
         <Header title="Verification" />
         <KeyboardAvoidingView
-          behavior="position"
+          behavior={Platform.OS === 'ios' ? 'position' : null}
           keyboardVerticalOffset={extraPadding}
           style={styles.containerBottom}>
           <Text style={styles.verificationPrompt}>
@@ -47,8 +49,13 @@ export default function VerificationScreen(props: Props) {
             returnKeyType="done"
             onLayout={() => {
               setTimeout(() => {
-                codeInputRef.current?.focus();
-                setExtraPadding(60);
+                if (mounted.current === false) {
+                  codeInputRef.current?.focus();
+                  mounted.current = true;
+                }
+                if (Platform.OS === 'ios') {
+                  setExtraPadding(60);
+                }
               }, 300);
             }}
             maxLength={6}
