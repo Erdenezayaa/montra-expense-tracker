@@ -8,6 +8,7 @@ import {RootStackParamList} from '@app/routes/onboard';
 import {data} from './index.data';
 import {soft_purple, violet} from '@app/styles/colors';
 import SafeAreaContainer from '@app/views/SafeAreaContainer';
+import Button from '@app/views/Button';
 
 type Props = {
   navigation: NativeStackScreenProps<
@@ -58,9 +59,7 @@ function WelcomeScreen(props: Props) {
           />
         </View>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.signupButton} onPress={onPressSignup}>
-            <Text style={styles.buttonTitle}>Sign Up</Text>
-          </TouchableOpacity>
+          <Button title="Sign Up" onPress={onPressSignup} />
           <TouchableOpacity style={styles.loginButton} onPress={onPressLogin}>
             <Text style={styles.loginTitle}>Login</Text>
           </TouchableOpacity>

@@ -1,5 +1,11 @@
 import {StyleSheet} from 'react-native';
-import {primary_text, secondary_text, soft_purple, violet} from './colors';
+import {
+  dark_text,
+  primary_text,
+  secondary_text,
+  soft_purple,
+  violet,
+} from './colors';
 import {screen_height, screen_width} from './dimens';
 import * as fonts from './fonts';
 
@@ -77,6 +83,7 @@ const styles = StyleSheet.create({
     bottom: -20,
   },
   signupButton: {
+    width: '100%',
     height: 60,
     marginTop: 25,
     backgroundColor: violet,
@@ -240,6 +247,53 @@ const styles = StyleSheet.create({
   buttonLoader: {
     marginLeft: 10,
     color: 'white',
+  },
+  containerBottom: {
+    flex: 1,
+    width: '100%',
+    paddingTop: 5,
+    paddingHorizontal: 15,
+    justifyContent: 'flex-end',
+  },
+  verificationPrompt: {
+    fontFamily: fonts.medium,
+    fontSize: 36,
+    fontWeight: '500',
+    textAlign: 'left',
+    lineHeight: 44,
+    color: dark_text,
+  },
+  codeInput: {
+    height: 40,
+    marginVertical: 15,
+    color: dark_text,
+    fontSize: 32,
+    fontFamily: fonts.regular,
+    fontWeight: '700',
+    lineHeight: 39,
+    width: '100%',
+  },
+  verificationDesc: {
+    fontFamily: fonts.regular,
+    fontSize: 16,
+    lineHeight: 20,
+    fontWeight: '500',
+  },
+  verificationDescAccent: {
+    fontFamily: fonts.regular,
+    fontSize: 16,
+    color: violet,
+    lineHeight: 20,
+    fontWeight: '500',
+  },
+  sendAgainText: {
+    fontFamily: fonts.regular,
+    fontWeight: '500',
+    fontSize: 16,
+    lineHeight: 20,
+    marginTop: 15,
+    color: violet,
+    textDecorationLine: 'underline',
   },
 });
 

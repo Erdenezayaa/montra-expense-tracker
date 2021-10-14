@@ -6,6 +6,7 @@ import GoogleIcon from '@app/assets/google_logo.svg';
 import SafeAreaContainer from '@app/views/SafeAreaContainer';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@app/routes/onboard';
+import Button from '@app/views/Button';
 
 type Props = {
   navigation: NativeStackScreenProps<RootStackParamList, 'Login'>['navigation'];
@@ -35,9 +36,7 @@ export default function LoginScreen(props: Props) {
             secureTextEntry={true}
             placeholderTextColor="#91919F"
           />
-          <TouchableOpacity style={styles.signupButton}>
-            <Text style={styles.buttonTitle}>Login</Text>
-          </TouchableOpacity>
+          <Button title="Login" onPress={() => {}} />
           <Text style={styles.orWith}>Or with</Text>
           <TouchableOpacity style={styles.neutralButton}>
             <View style={styles.horizontalRow}>

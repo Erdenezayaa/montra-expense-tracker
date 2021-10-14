@@ -6,6 +6,7 @@ import {
 import WelcomeScreen from '@app/screens/welcome';
 import SignupScreen from '@app/screens/signup';
 import LoginScreen from '@app/screens/login';
+import VerificationScreen from '@app/screens/verification';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,7 @@ export type RootStackParamList = {
   Welcome: undefined;
   Signup: undefined;
   Login: undefined;
+  Verification: undefined;
 };
 
 function OnboardStack() {
@@ -37,6 +39,11 @@ function OnboardStack() {
       <Stack.Screen
         name="Login"
         component={LoginScreen}
+        options={navigationOptions}
+      />
+      <Stack.Screen
+        name="Verification"
+        component={VerificationScreen}
         options={navigationOptions}
       />
     </Stack.Navigator>

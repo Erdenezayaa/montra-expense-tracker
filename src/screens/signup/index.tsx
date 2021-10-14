@@ -4,7 +4,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  ActivityIndicator,
+  KeyboardAvoidingView,
 } from 'react-native';
 import styles from '@app/styles';
 import Header from '@app/views/Header';
@@ -17,6 +17,7 @@ import {createMetaSelector} from '@app/redux/metadata/selectors';
 import * as CoreSelectors from '@app/redux/core/selectors';
 import * as CoreActions from '@app/redux/core/actions';
 import {clearMetaData} from '@app/redux/metadata/actions';
+import Button from '@app/views/Button';
 
 const signupMetaSelector = createMetaSelector(CoreActions.signUp);
 
@@ -46,6 +47,11 @@ export default function SignupScreen(props: Props) {
     );
   };
   useEffect(() => {
+    if (signupMeta.loaded && signupMeta.pending === false) {
+      navigation.navigate('Verification');
+    }
+  }, [signupMeta, navigation]);
+  useEffect(() => {
     return () => {
       dispatch(CoreActions.signupReset());
       dispatch(clearMetaData(CoreActions.signUp.typePrefix));
@@ -55,7 +61,7 @@ export default function SignupScreen(props: Props) {
     <SafeAreaContainer>
       <View style={styles.screenContainer}>
         <Header title="Sign Up" />
-        <View style={styles.formContainer}>
+        <KeyboardAvoidingView behavior="padding" style={styles.formContainer}>
           <TextInput
             style={styles.textInput}
             placeholder="Name"
@@ -83,17 +89,11 @@ export default function SignupScreen(props: Props) {
             secureTextEntry={true}
             placeholderTextColor="#91919F"
           />
-          <TouchableOpacity
+          <Button
+            title="Sign Up"
+            loading={signupMeta.pending}
             onPress={onSignupPress}
-            disabled={signupMeta.pending}
-            style={styles.signupButton}>
-            <View style={styles.buttonHorizontal}>
-              <Text style={styles.buttonTitle}>Sign Up</Text>
-              {signupMeta.pending && (
-                <ActivityIndicator style={styles.buttonLoader} animating />
-              )}
-            </View>
-          </TouchableOpacity>
+          />
           <Text style={styles.orWith}>Or with</Text>
           <TouchableOpacity style={styles.neutralButton}>
             <View style={styles.horizontalRow}>
@@ -107,7 +107,7 @@ export default function SignupScreen(props: Props) {
               <Text style={styles.loginBtn}>Login</Text>
             </TouchableOpacity>
           </View>
-        </View>
+        </KeyboardAvoidingView>
         <Text />
       </View>
     </SafeAreaContainer>
