@@ -2,7 +2,7 @@
 
 React Native UI Implementation of [Montra - Expense Tracker UI KIT](https://www.figma.com/community/file/998557875473123405)
 
-<img width="250px" src="./screenshots/screenshot_welcome.png" style="margin-right: 20px; border-radius; 25px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" /> <img width="250px" src="./screenshots/screenshot_signup.png" style="margin-right: 20px; border-radius; 25px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" />
+<img width="250px" src="./screenshots/screenshot_1.png" style="margin-right: 20px;" /> <img width="250px" src="./screenshots/screenshot_2.png" style="margin-right: 20px;" />  <img width="250px" src="./screenshots/screenshot_3.png" style="margin-right: 20px;" /> <img width="250px" src="./screenshots/screenshot_4.png" style="margin-right: 20px;" /> <img width="250px" src="./screenshots/screenshot_5.png" style="margin-right: 20px;" /> 
 
 ### How to run
 
