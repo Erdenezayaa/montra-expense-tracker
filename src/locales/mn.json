@@ -1,0 +1,20 @@
+{
+  "button": {
+    "signup": "Бүртгүүлэх",
+    "login": "Нэвтрэх"
+  },
+  "slides": {
+    "1": {
+      "title": "Gain total control of your money",
+      "subtitle": "Become your own money manager and make every cent count"
+    },
+    "2": {
+      "title": "Know where your money goes",
+      "subtitle": "Track your transaction easily with categories and financial report"
+    },
+    "3": {
+      "title": "Planning ahead",
+      "subtitle": "Setup your budget for each category so you in control"
+    }
+  }
+}

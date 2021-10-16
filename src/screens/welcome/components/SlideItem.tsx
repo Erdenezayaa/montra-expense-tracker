@@ -3,6 +3,7 @@ import {View, Text} from 'react-native';
 import LottieView from 'lottie-react-native';
 import styles from '@app/styles';
 import {SlideData} from '../index.data';
+import {useTranslation} from 'react-i18next';
 
 type Props = {
   item: SlideData;
@@ -17,6 +18,7 @@ const slide3 = require('@app/assets/planning_ahead.json');
 
 function SlideItem(props: Props) {
   const {item, first, second, third} = props;
+  const {t} = useTranslation();
   return (
     <View style={styles.slideContainer}>
       <View style={styles.slideItemWrapper}>

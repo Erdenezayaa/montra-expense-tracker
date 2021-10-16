@@ -24,6 +24,7 @@ module.exports = {
           '@app/assets': './src/assets',
           '@app/redux': './src/redux',
           '@app/views': './src/views',
+          '@app/locales': './src/locales',
         },
       },
     ],
