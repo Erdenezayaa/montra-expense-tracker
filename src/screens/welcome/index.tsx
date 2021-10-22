@@ -65,9 +65,7 @@ function WelcomeScreen(props: Props) {
               <SlideItem
                 key={item.icon}
                 item={item}
-                first={firstAnim}
-                second={secondAnim}
-                third={thirdAnim}
+                animRefs={[firstAnim, secondAnim, thirdAnim]}
               />
             )}
             showsHorizontalScrollIndicator={false}
