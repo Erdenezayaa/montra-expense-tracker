@@ -5,7 +5,7 @@ workflows:
             vars:
                 XCODE_WORKSPACE: "montra"
                 XCODE_SCHEME: "montra"
-            node: latest
+            node: 14.16.1
         scripts:
             - npm install
             - echo "sdk.dir=$HOME/programs/android-sdk-macosx" > "$FCI_BUILD_DIR/android/local.properties"
