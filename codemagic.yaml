@@ -1,0 +1,17 @@
+workflows:
+    react-native:
+        name: React Native App
+        environment:
+            vars:
+                XCODE_WORKSPACE: "montra"
+                XCODE_SCHEME: "montra"
+            node: latest
+        scripts:
+            - npm install
+            - echo "sdk.dir=$HOME/programs/android-sdk-macosx" > "$FCI_BUILD_DIR/android/local.properties"
+            - |
+                # build Android
+                cd android
+                ./gradlew assembleRelease                
+        artifacts:
+            - android/app/build/outputs/**/**/*.apk
