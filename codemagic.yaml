@@ -11,9 +11,10 @@ workflows:
             - echo "sdk.dir=$HOME/programs/android-sdk-macosx" > "$FCI_BUILD_DIR/android/local.properties"
             - |
                 # build Android
-                cd android
                 rm -rf android/app/src/main/res/drawable-*
                 rm -rf android/app/src/main/res/raw/*
+                cd android
+                ./gradlew clean
                 ./gradlew assembleRelease                
         artifacts:
             - android/app/build/outputs/**/**/*.apk
